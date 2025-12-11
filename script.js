@@ -51,7 +51,7 @@ const WORDS = [
     "VOCAL", "VOICE", "WASTE", "WATCH", "WATER", "WHEEL", "WHERE", "WHICH", "WHILE", "WHITE",
     "WHOLE", "WHOSE", "WOMAN", "WOMEN", "WORLD", "WORRY", "WORSE", "WORST", "WORTH", "WOULD",
     "WOUND", "WRITE", "WRONG", "WROTE", "YIELD", "YOUNG", "YOUTH", "ZONES", "ZEBRA", "JORKS",
-    "NOICE", "JOSHI", "TYLER", "FARUQ", "KINKY", "PENIS",
+    "NOICE", "JOSHI", "TYLER", "FARUQ", "KINKY", "PENIS", "PUSSY",
 ];
 
 // Valid 5-letter words for guessing (includes WORDS plus more)
@@ -146,6 +146,7 @@ function addLetter(letter) {
 // Delete the last letter
 function deleteLetter() {
     if (currentTile > 0) {
+        clearMessage();
         currentTile--;
         const tile = document.querySelector(`[data-row="${currentRow}"][data-col="${currentTile}"]`);
         tile.textContent = "";
