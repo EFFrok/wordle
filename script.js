@@ -256,5 +256,36 @@ function showMessage(text, isError = false) {
     }, 2000);
 }
 
+// Restart the game
+function restartGame() {
+    // Reset game state
+    currentRow = 0;
+    currentTile = 0;
+    gameOver = false;
+    targetWord = WORDS[Math.floor(Math.random() * WORDS.length)];
+    console.log("Target word:", targetWord); // For testing
+    
+    // Clear the board
+    const tiles = document.querySelectorAll(".tile");
+    tiles.forEach(tile => {
+        tile.textContent = "";
+        tile.className = "tile";
+    });
+    
+    // Reset keyboard colors
+    const keys = document.querySelectorAll(".key");
+    keys.forEach(key => {
+        key.classList.remove("correct", "present", "absent");
+    });
+    
+    // Clear message
+    const messageEl = document.getElementById("message");
+    messageEl.textContent = "";
+    messageEl.className = "message";
+}
+
+// Add restart button listener
+document.getElementById("restart-btn").addEventListener("click", restartGame);
+
 // Start the game
 init();
