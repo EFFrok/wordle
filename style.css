@@ -22,10 +22,9 @@ body {
 
 header {
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     padding-bottom: 15px;
     border-bottom: 1px solid #3a3a3c;
-    position: relative;
 }
 
 h1 {
@@ -35,10 +34,8 @@ h1 {
 }
 
 .restart-btn {
-    position: absolute;
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);
+    display: block;
+    margin: 0 auto 20px;
     background-color: #538d4e;
     color: #ffffff;
     border: none;
@@ -52,11 +49,11 @@ h1 {
 
 .restart-btn:hover {
     background-color: #6aaa64;
-    transform: translateY(-50%) scale(1.05);
+    transform: scale(1.05);
 }
 
 .restart-btn:active {
-    transform: translateY(-50%) scale(0.95);
+    transform: scale(0.95);
 }
 
 .message {

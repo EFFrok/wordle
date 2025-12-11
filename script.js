@@ -50,7 +50,8 @@ const WORDS = [
     "UPSET", "URBAN", "USAGE", "USUAL", "VALID", "VALUE", "VIDEO", "VIRUS", "VISIT", "VITAL",
     "VOCAL", "VOICE", "WASTE", "WATCH", "WATER", "WHEEL", "WHERE", "WHICH", "WHILE", "WHITE",
     "WHOLE", "WHOSE", "WOMAN", "WOMEN", "WORLD", "WORRY", "WORSE", "WORST", "WORTH", "WOULD",
-    "WOUND", "WRITE", "WRONG", "WROTE", "YIELD", "YOUNG", "YOUTH"
+    "WOUND", "WRITE", "WRONG", "WROTE", "YIELD", "YOUNG", "YOUTH", "ZONES", "ZEBRA", "JORKS",
+    "NOICE", "JOSHI", "TYLER", "FARUQ", "KINKY", "PENIS",
 ];
 
 // Valid 5-letter words for guessing (includes WORDS plus more)
@@ -164,8 +165,19 @@ function submitGuess() {
         guess += tile.textContent;
     }
     
-    // Check if word is valid (simplified - accepts all 5-letter combinations)
+    // Check if word is valid
     if (guess.length !== 5) {
+        showMessage("Not enough letters", true);
+        return;
+    }
+
+    if (guess === "JJJJJ") {
+        showMessage("Josh are you stupid or what? Go jorking", true)
+        return;
+    }
+    
+    // Check if word exists in the word list
+    if (!WORDS.includes(guess) && !VALID_WORDS.includes(guess)) {
         showMessage("Not a valid word", true);
         return;
     }
@@ -289,3 +301,6 @@ document.getElementById("restart-btn").addEventListener("click", restartGame);
 
 // Start the game
 init();
+
+// Future ideas:
+// - Differend modes - maybe even possibility to 4 letter or 6 letter words
