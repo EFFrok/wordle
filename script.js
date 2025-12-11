@@ -62,6 +62,7 @@ let targetWord = "";
 let currentRow = 0;
 let currentTile = 0;
 let gameOver = false;
+let messageTimeout = null;
 
 // Initialize the game
 function init() {
@@ -134,6 +135,7 @@ function handleKey(key) {
 // Add a letter to the current tile
 function addLetter(letter) {
     if (currentTile < 5) {
+        clearMessage();
         const tile = document.querySelector(`[data-row="${currentRow}"][data-col="${currentTile}"]`);
         tile.textContent = letter;
         tile.classList.add("filled");
@@ -254,8 +256,21 @@ function checkGuess(guess) {
     });
 }
 
+// Clear message
+function clearMessage() {
+    if (messageTimeout) {
+        clearTimeout(messageTimeout);
+        messageTimeout = null;
+    }
+    const messageEl = document.getElementById("message");
+    messageEl.className = "message";
+    messageEl.textContent = "";
+}
+
 // Show message to user
 function showMessage(text, isError = false) {
+    clearMessage();
+    
     const messageEl = document.getElementById("message");
     messageEl.textContent = text;
     messageEl.className = "message show";
@@ -263,9 +278,11 @@ function showMessage(text, isError = false) {
         messageEl.classList.add("error");
     }
     
-    setTimeout(() => {
+    messageTimeout = setTimeout(() => {
         messageEl.className = "message";
-    }, 2000);
+        messageEl.textContent = "";
+        messageTimeout = null;
+    }, 5000);
 }
 
 // Restart the game
