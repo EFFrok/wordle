@@ -1,0 +1,15 @@
+# Duplicate checker script
+check_duplicates.js
+
+# macOS
+.DS_Store
+
+# Node
+node_modules/
+
+# Editor directories and files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~

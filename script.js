@@ -103,7 +103,8 @@ const WORDS = [
     "HAUNT", "DIVES", "CAFES", "RESTO", "DELIS", "SHOPS", "MALLS", "KIOSK", "CARTS", "SEDAN",
     "COUPE", "WAGON", "BUSES", "TRAMS", "METRO", "FERRY", "YACHT", "LINER", "BARGE", "CANOE",
     "KAYAK", "RAFTS", "SKIFF", "SLOOP", "KETCH", "NAVAL", "HAULS", "LOADS", "GOODS", "WARES",
-    "ITEMS", "HOARD", "CACHE", "STASH", "TROVE", "BOOTY", "SPOIL", "LOOTS", "HEIST", "CAPER"
+    "ITEMS", "HOARD", "CACHE", "STASH", "TROVE", "BOOTY", "SPOIL", "LOOTS", "HEIST", "CAPER",
+    "PLANS", "SCAMS", "FLEEC", "PILLS", "TONIC", "DROPS", "CURES", "REMES",
 ];
 
 // Valid 5-letter words for guessing (includes WORDS plus more)
